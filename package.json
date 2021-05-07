@@ -1,0 +1,94 @@
+{
+  "name": "fleet_admin",
+  "version": "1.0.0",
+  "description": "Admin",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next -p 3000 && next -p 8888",
+    "build": "next build",
+    "start": "next start",
+    "vercel": "vercel",
+    "vercelconfirm": "vercel --confirm",
+    "vercelprod": "vercel --prod"
+  },
+  "author": "Birat-KC",
+  "license": "N/A",
+  "dependencies": {
+    "babel-core": "^7.0.0-bridge.0",
+    "dotenv": "^8.2.0",
+    "framer-motion": "^3.7.0",
+    "mapbox-gl": "^2.2.0",
+    "next": "^10.2.0",
+    "next-compose-plugins": "^2.2.0",
+    "next-transpile-modules": "^6.0.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.12.0",
+    "react-select": "^3.1.1",
+    "styled-components": "^4.4.1",
+    "subscriptions-transport-ws": "^0.9.16",
+    "swr": "^0.5.6",
+    "vercel": "^19.1.1"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.11.1"
+  },
+  "//": "babel configuration",
+  "babel": {
+    "env": {
+      "development": {
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true,
+              "preprocess": false
+            }
+          ]
+        ]
+      },
+      "production": {
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true,
+              "preprocess": false
+            }
+          ]
+        ]
+      },
+      "test": {
+        "presets": [
+          [
+            "next/babel",
+            {
+              "preset-env": {
+                "modules": "commonjs"
+              }
+            }
+          ]
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "directories": {
+    "lib": "lib"
+  }
+}
